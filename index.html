@@ -1,81 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex — Developer &amp; Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <a class="brand" href="#">My <span class="accent">Website</span></a>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="brand">alex<span class="accent">.</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
 
-    <section class="hero">
-      <h1>Hello, I'm <span class="accent">Alex</span>.</h1>
-      <p class="lead">I build clean, thoughtful things for the web.</p>
-      <a href="#work" class="btn">See my work</a>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="hero-glow glow-1"></div>
+        <div class="hero-glow glow-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge fade-up" style="--d:0s">
+          <span class="badge-dot"></span>
+          Available for work
+        </div>
+        <h1 class="fade-up" style="--d:0.1s">
+          Hi, I'm Alex.<br />
+          <span class="gradient-text">I build things<br />for the web.</span>
+        </h1>
+        <p class="hero-lead fade-up" style="--d:0.2s">
+          Full-stack developer with a passion for crafting clean, purposeful digital
+          experiences. I care about performance, accessibility, and the small details
+          that make products feel just right.
+        </p>
+        <div class="hero-cta fade-up" style="--d:0.3s">
+          <a href="#work" class="btn">See my work</a>
+          <a href="#contact" class="btn-ghost">Get in touch</a>
+        </div>
+        <div class="hero-scroll fade-up" style="--d:0.5s">
+          <span>Scroll</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 3v10M3 9l5 4 5-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        I'm a developer based somewhere on the internet. I care about simple code,
-        clear design, and building things that actually work.
-      </p>
+      <div class="container">
+        <div class="section-label reveal">About me</div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h2>Building with care,<br />shipping with confidence.</h2>
+            <p>
+              I'm a developer focused on the intersection of clean code and thoughtful
+              design. With a background spanning front-end craft and back-end systems,
+              I build things that are fast, accessible, and a pleasure to use.
+            </p>
+            <p>
+              When I'm not writing code, I'm usually reading about it, thinking about
+              system design, or finding ways to make existing things 10% better. I
+              believe great software is invisible — it just works.
+            </p>
+          </div>
+          <div class="about-skills">
+            <div class="skill-group reveal" style="--d:0.05s">
+              <div class="skill-label">Languages</div>
+              <div class="skill-tags">
+                <span>TypeScript</span>
+                <span>Python</span>
+                <span>Rust</span>
+                <span>Go</span>
+              </div>
+            </div>
+            <div class="skill-group reveal" style="--d:0.1s">
+              <div class="skill-label">Frontend</div>
+              <div class="skill-tags">
+                <span>React</span>
+                <span>Next.js</span>
+                <span>CSS / Tailwind</span>
+                <span>WebGL</span>
+              </div>
+            </div>
+            <div class="skill-group reveal" style="--d:0.15s">
+              <div class="skill-label">Backend &amp; Tools</div>
+              <div class="skill-tags">
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Work -->
     <section id="work" class="section">
-      <h2>Work</h2>
-      <ul class="cards">
-        <li class="card">
-          <h3>Project One</h3>
-          <p>A short description of what this project does and why it matters.</p>
-          <a href="#">View &rarr;</a>
-        </li>
-        <li class="card">
-          <h3>Project Two</h3>
-          <p>Another project with a brief description of its purpose and impact.</p>
-          <a href="#">View &rarr;</a>
-        </li>
-        <li class="card">
-          <h3>Project Three</h3>
-          <p>One more project showcasing a different skill or technology area.</p>
-          <a href="#">View &rarr;</a>
-        </li>
-      </ul>
+      <div class="container">
+        <div class="section-label reveal">Selected work</div>
+        <h2 class="section-title reveal">Things I've built</h2>
+        <div class="projects-grid">
+
+          <article class="project-card reveal" style="--d:0.05s">
+            <div class="project-thumbnail thumb-1">
+              <div class="thumb-inner"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-type">Web App</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3>Project One</h3>
+              <p>A full-stack application built for speed and clarity. Features real-time updates, offline support, and a carefully considered interface that stays out of your way.</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+              </div>
+              <a href="#" class="project-link">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7h9M7 2.5l4.5 4.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--d:0.15s">
+            <div class="project-thumbnail thumb-2">
+              <div class="thumb-inner"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-type">Open Source</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3>Project Two</h3>
+              <p>An open-source developer tool that automates the tedious parts of a common workflow. Hit 800+ GitHub stars in the first month with an active community around it.</p>
+              <div class="project-tags">
+                <span>TypeScript</span>
+                <span>CLI</span>
+                <span>GitHub API</span>
+              </div>
+              <a href="#" class="project-link">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7h9M7 2.5l4.5 4.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--d:0.25s">
+            <div class="project-thumbnail thumb-3">
+              <div class="thumb-inner"></div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-type">Design System</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3>Project Three</h3>
+              <p>A component library built from scratch — 60+ components, a complete token system, accessibility-first from day one, and detailed Storybook documentation throughout.</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Storybook</span>
+                <span>CSS</span>
+              </div>
+              <a href="#" class="project-link">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7h9M7 2.5l4.5 4.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Have a question or want to work together? Reach out.</p>
-      <a href="mailto:hello@example.com" class="btn btn-outline">hello@example.com</a>
+      <div class="container">
+        <div class="contact-inner">
+          <div class="section-label reveal">Contact</div>
+          <h2 class="reveal" style="--d:0.05s">Let's work<br />together.</h2>
+          <p class="reveal" style="--d:0.1s">
+            Have a project in mind, a question about my work, or just want to say
+            hello? My inbox is always open.
+          </p>
+          <a href="mailto:hello@example.com" class="btn btn-lg reveal" style="--d:0.15s">
+            Send me an email
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M2 4l6 5 6-5M2 4h12v8H2V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="social-links reveal" style="--d:0.2s">
+            <a href="#" class="social-link">GitHub</a>
+            <span class="social-sep" aria-hidden="true">·</span>
+            <a href="#" class="social-link">LinkedIn</a>
+            <span class="social-sep" aria-hidden="true">·</span>
+            <a href="#" class="social-link">Twitter&nbsp;/&nbsp;X</a>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 My Website</p>
+    <div class="container footer-inner">
+      <span>© 2026 Alex.</span>
+      <span class="footer-note">Built with care and very few regrets.</span>
+    </div>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      const btn = document.querySelector('.menu-toggle');
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
+    // Mobile menu toggle
+    function toggleMenu(btn) {
+      const nav = document.getElementById('nav-links');
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      btn.classList.toggle('open', isOpen);
     }
+
+    // Close menu on nav link click
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Scroll-reveal animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
