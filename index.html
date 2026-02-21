@@ -6,7 +6,27 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Hello, World!</h1>
-<p>This is a simple site.</p>
+
+<nav class="navbar">
+  <a class="navbar-brand" href="#">My Website</a>
+  <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">&#9776;</button>
+  <ul class="navbar-links" id="navbarLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="content">
+  <h1>Hello, World!</h1>
+  <p>This is a simple site.</p>
+</main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navbarLinks').classList.toggle('open');
+  }
+</script>
 </body>
 </html>
